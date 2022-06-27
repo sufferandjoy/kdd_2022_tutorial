@@ -64,7 +64,7 @@ _LANGUAGES = {
 _PATHS = {
     "qadsm": {
         # "train": "unlabeled.qadsm.train.txt",
-        "train": "output/teacher/prediction.tsv",
+        "train": "prediction.tsv",
     }
 }
 
