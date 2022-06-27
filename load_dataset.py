@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Lint as: python3
-"""The General Language Understanding Evaluation (GLUE) benchmark."""
+# """The General Language Understanding Evaluation (GLUE) benchmark."""
 
 
 import json
@@ -64,7 +64,7 @@ _LANGUAGES = {
 _PATHS = {
     "qadsm": {
         # "train": "unlabeled.qadsm.train.txt",
-        "train": "prediction.tsv",
+        "train": "output/teacher/prediction.tsv",
     }
 }
 

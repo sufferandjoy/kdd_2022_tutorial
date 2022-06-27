@@ -188,7 +188,7 @@ if __name__ == '__main__':
     if args.use_labeled_data == 'true':
         logging.info('Load labeled dataset.')
     else:
-        dataset['train'] = load_dataset('load_dataset.py', split='train')
+        dataset['train'] = load_dataset('kdd_2022_tutorial/load_dataset.py', split='train')
         logging.info('Load unlabeled dataset.')
 
     # load model and tokenizer
