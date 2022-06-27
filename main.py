@@ -146,8 +146,8 @@ if __name__ == '__main__':
         dataset = prepare_dataset(args)
         tokenizer = AutoTokenizer.from_pretrained(args.teacher_pretrained)
 
-        # load model and tokenizer
-        model, tokenizer = None, None
+        # load model
+        model = None
         if args.model == 'teacher':
             model = TeacherModel(args).to(args.device)
             logging.info('Load Teacher model %s.' % args.teacher_pretrained)
