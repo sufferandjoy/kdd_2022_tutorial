@@ -4,7 +4,7 @@ This repository is for Session 3 of KDD 2022 tutorial "Deep Search Relevance Ran
 * public models: we implement a [BERT-Mini](https://huggingface.co/google/bert_uncased_L-4_H-256_A-4) model as our teacher model and a [TwinBERT](https://arxiv.org/abs/2002.06275) model built from two [BERT-Tiny](https://huggingface.co/google/bert_uncased_L-2_H-128_A-2) models as the corresponding student. Both teacher and student models could be easily implemented based on [Hugging Face Transformers](https://huggingface.co/docs/transformers/main/en/index). 
 
 ## Knowledge Distillation
-The most important paramter when calling main.py is **task**, which supports 4 different values in total:
+The most important paramter when calling main.py is **task**, which supports 4 different settings:
 * student_ft: this is the task to finetune a student model on human labels, where suffix **ft** means finetuning.
 * teacher_ft: this is the task to finetune a teacher model on human labels.
 * teacher_inf: this is the task to inference training data with the best teacher model which shows smallest average validaiton loss.
