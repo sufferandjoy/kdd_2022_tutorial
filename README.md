@@ -21,7 +21,7 @@ python main.py --task student_ft --train_batch_size 512 --val_batch_size 2048 --
 ```
 
 ### Step 1: Finetune Teacher Model using Human Labels
-Next, we will start from the very first step in knowledge distillation, which is to train a teacher model. Typical teacher models used in industrial applications are usually very powerful and hence resource-consuming, but we are often saved by the fact that we don't need to serve such models online. Instead, all the training and inference on these models would happen offline. Here, to train our teacher model we need to set task as **teacher_ft** and run the following code snippet, similar to what we do in the last step: 
+Next, we will start from the very first step in knowledge distillation, which is to train a teacher model. Typical teacher models used in industrial applications are usually very powerful and hence resource-consuming, but we are often saved by the fact that we don't need to serve such models online. Instead, all the training and inference on these models would happen offline. Here, to train our teacher model we need to set task as **teacher_ft** and run the following code snippet, similar to what we did in the last step: 
 ```
 python main.py --task teacher_ft --train_batch_size 512 --val_batch_size 2048
 ```
@@ -43,11 +43,11 @@ python main.py --task student_kd --train_batch_size 512 --val_batch_size 2048
 ```
 
 ## Evaluation
-now that all the 3 major steps for knowledge distillaiton have completed, we want to know whether all these efforts have end up with real impact. To see this, let us run our script for the last time with task **eval**, which will load the best checkpoint under teacher_ft, student_ft and student_kd settings respectively and conduct evaluation on the same test data:
+Now that all the 3 major steps for knowledge distillaiton have completed, we want to know whether all these efforts have brought any real impact. To see this, let us run our script for the last time with task **eval**, which will load the best checkpoint under teacher_ft, student_ft and student_kd settings respectively and conduct evaluation on the same test data:
 ```
 python main.py --task eval
 ```
-The above operation would print a table as below, where the last row highlights the improvement by comparing metrics for student_kd against that of student_ft. As we can see, even though we experiment on such a small data set with barely no advanced training strategies nor hyper-parameter tuning, we could see a 3% AUC lift:
+The above operation would print a table as below, where the last row highlights the improvement by comparing metrics for student_kd against that of student_ft. As we can see, even though we experiment on such a small data set with barely no advanced training strategies nor hyper-parameter tuning, we could see a remarkable 3% AUC lift:
 
 | Task | PR AUC | ROC AUC |
 | ---- | ---- | ---- |
