@@ -109,6 +109,7 @@ def _forward_pass(model, batch, args):
         score = model(batch['input_ids'].to(args.device), batch['attention_mask'].to(args.device),
                       batch['input_ids_2'].to(args.device),
                       batch['attention_mask_2'].to(args.device))
+        score = (score + 1) * 0.5
     return score
 
 
